@@ -1,0 +1,14 @@
+
+<main-module-options-menu></main-module-options-menu>
+<mat-sidenav-container hasBackdrop="false">
+    <mat-sidenav #appDrawerLeft class="mat_sidenav_left"  mode="over"  opened="false" position="start">
+          <main-module-sidenav-left></main-module-sidenav-left>
+     </mat-sidenav>
+     <mat-sidenav #appDrawerRight class="mat_sidenav_right" mode="over" opened="false" position="end">
+       <!--<main-module-sidenav-right></main-module-sidenav-right>-->
+       <h1>Right</h1>
+     </mat-sidenav>
+     <mat-sidenav-content>
+          <router-outlet class="router_container"></router-outlet>
+     </mat-sidenav-content>
+</mat-sidenav-container>

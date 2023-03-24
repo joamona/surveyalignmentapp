@@ -1,0 +1,40 @@
+<mat-toolbar >
+    <div fxShow="true" fxHide.gt-sm="true" fxLayoutAlign="start">
+        <button *ngIf="!sidenavsService.navLeftOpened" mat-icon-button (click)="sidenavsService.openNavLeft();sidenavsService.closeNavRight()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <button *ngIf="sidenavsService.navLeftOpened" mat-icon-button (click)="sidenavsService.closeNavLeft()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>  
+    <div fxShow="true" fxHide.xs="true" fxHide.sm="true">        
+        <button mat-button class="menu-button" [routerLink]="'/home'" matTooltip="Home">
+            <span>Home</span>
+        </button>
+        <!--
+            <button mat-button class="menu-button" [routerLink]="'/map'" matTooltip="Map">
+                <span>Map</span>
+            </button>
+        -->
+        <button mat-button class="menu-button" [routerLink]="'/alignment'" matTooltip="Alignment">
+            <span>Alignment</span>
+        </button>
+
+        <button mat-button class="menu-button" [routerLink]="'/map'" matTooltip="Map">
+            <span>Map</span>
+        </button>
+
+        <button mat-button class="menu-button" [routerLink]="'/app'" matTooltip="Download app">
+            <span>App</span>
+        </button>
+        
+        <button mat-button class="menu-button" [routerLink]="'/about'" matTooltip="About">
+            <span>About</span>
+        </button>
+    </div>    
+    <div fxFlex fxLayout fxLayoutAlign="end" *ngIf="sidenavsService.navRigthOpened" >
+        <button mat-icon-button (click)="sidenavsService.closeNavRight()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</mat-toolbar>

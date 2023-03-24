@@ -1,0 +1,45 @@
+.center{text-align: center;}
+.logo{
+    width: 60px;
+}
+h1 {
+    font-size:xx-large;
+}
+p, li{
+    font-size:large;
+    font-family:Arial, Helvetica, sans-serif;
+    line-height: 25px;
+}
+
+.imagen{
+    display: block;  //se muestra en una nueva línea
+	width: 100%;//100% de la pantalla. Puesto encima de max-width
+	max-width:150px;//máximo de ancho 400 píxeles, si la pantalla es menor, entonces ocupará el 100%
+	height: auto;//el alto se autoajusta
+}
+
+.imagen-carmen{
+    display: block;  //se muestra en una nueva línea
+	width: 100%;//100% de la pantalla. Puesto encima de max-width
+	max-width:120px;//máximo de ancho 400 píxeles, si la pantalla es menor, entonces ocupará el 100%
+	height: auto;//el alto se autoajusta
+}
+
+.fondo{
+    background-color: rgb(203, 207, 207);
+}
+
+h1 {
+    font-size:xx-large;
+}
+.margin-top20px{
+    margin-top: 23px;
+}
+
+.min_width{
+    min-width: 300px;
+}
+
+.padding5{
+    margin: 5px;
+}

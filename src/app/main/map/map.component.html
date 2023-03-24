@@ -1,0 +1,20 @@
+<div *ngIf="getCurrentResultIndex() < 0 ">
+    <main-header></main-header>
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <div><h1>There are not still results to show</h1></div>
+        <div class="margin_bottom">
+            <button mat-raised-button matTooltip="Return to Alignment" [routerLink]="'/alignment'"><mat-icon>arrow_back</mat-icon></button>
+        </div>
+    </div>
+</div>
+<div *ngIf="getCurrentResultIndex() > -1 ">
+    <div id="map" class="map"></div>
+    <div id="div_back" fxLayout="column" fxLayoutAlign="center center">
+        <button mat-raised-button matTooltip="Return to Alignment" [routerLink]="'/alignment'"><mat-icon>arrow_back</mat-icon></button>
+        <div> Result {{alignmentResultsService.currentResultIndex + 1}} of {{alignmentResultsService.getNumberOfResults()}}</div>
+        <div fxLayout="row" fxLayoutAlign="center center">
+                 <button mat-raised-button [disabled]="disablePreviousButton()" (click)="previousResult()" matTooltip="Previous result"><mat-icon class="rotate_image">forward</mat-icon></button>
+                 <button mat-raised-button [disabled]="disableNextButton()" (click)="nextResult()" matTooltip="Next result"><mat-icon>forward</mat-icon></button>
+        </div>
+    </div>
+</div>
