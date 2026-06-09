@@ -1,0 +1,120 @@
+<div class="fondo">
+    <br>
+    <main-header></main-header>
+    <br>
+    <div fxLayout="row" fxLayoutAlign="space-around">
+        <!--When the screen is greater than medium (gt-md) changes the width to 50%-->
+        <div fxFlex.gt-md="50%">
+            <form [formGroup]="controlsGroup" autocomplete="off">
+                <mat-card>
+                    <div fxLayout="row" fxLayoutAlign="space-around"><mat-card-title>Radiación de puntos en
+                            2D</mat-card-title></div>
+                    <mat-card-content>
+
+                        <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="16px grid">
+                            <!--BASE POINT -->
+                            <div fxFlex.xl="45%" fxFlex.lg="45%" fxFlex.md="45%" fxFlex.sm="50%" fxFlex.xs="100%">
+                                <mat-card>
+                                    <div fxLayout="row" fxLayoutAlign="space-around"><mat-card-title>Punto
+                                            Base</mat-card-title> </div>
+                                    <mat-card-content>
+                                        <label class="input-label">X base</label>
+                                        <mat-form-field class="full-width">
+                                            <input onClick="this.select();" type="number" matInput placeholder="X base"
+                                                [formControl]="xBase" matTooltip="X base" (change)="clearResults()">
+                                            <mat-error *ngIf="xBase.hasError('required')">
+                                                The X is mandatory.
+                                            </mat-error>
+                                        </mat-form-field>
+
+                                        <label class="input-label">Y base</label>
+                                        <mat-form-field class="full-width">
+                                            <input onClick="this.select();" type="number" matInput placeholder="Y base"
+                                                [formControl]="yBase" matTooltip="Y base" (change)="clearResults()">
+                                            <mat-error *ngIf="yBase.hasError('required')">
+                                                The Y is mandatory.
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </mat-card-content>
+                                </mat-card>
+                            </div>
+                            <!--POLAR PARAMETERS -->
+                            <div fxFlex.xl="45%" fxFlex.lg="45%" fxFlex.md="45%" fxFlex.sm="50%" fxFlex.xs="100%">
+                                <mat-card>
+                                    <div fxLayout="row" fxLayoutAlign="space-around">
+                                        <mat-card-title>Parametros</mat-card-title>
+                                    </div>
+                                    <mat-card-content>
+                                        <label class="input-label">Desorientación (centesimal)</label>
+                                        <mat-form-field class="full-width">
+                                            <input onClick="this.select();" type="number" matInput
+                                                placeholder="Desorientación (centesimal)" [formControl]="desorientacion"
+                                                matTooltip="Instrument disorientation in centesimal grads"
+                                                (change)="clearResults()">
+                                            <mat-error *ngIf="desorientacion.hasError('required')">
+                                                Desorientación is mandatory.
+                                            </mat-error>
+                                        </mat-form-field>
+
+                                        <label class="input-label">Lectura Horizontal (centesimal)</label>
+                                        <mat-form-field class="full-width">
+                                            <input onClick="this.select();" type="number" matInput
+                                                placeholder="Lectura Horizontal (centesimal)"
+                                                [formControl]="lecturaHorizontal"
+                                                matTooltip="Horizontal reading in centesimal grads"
+                                                (change)="clearResults()">
+                                            <mat-error *ngIf="lecturaHorizontal.hasError('required')">
+                                                Lectura horizontal is mandatory.
+                                            </mat-error>
+                                        </mat-form-field>
+
+                                        <label class="input-label">Reduced Distance</label>
+                                        <mat-form-field class="full-width">
+                                            <input onClick="this.select();" type="number" matInput
+                                                placeholder="Reduced Distance" [formControl]="distancia"
+                                                matTooltip="Reduced Distance" (change)="clearResults()">
+                                            <mat-error *ngIf="distancia.hasError('required')">
+                                                The Distance is mandatory.
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </mat-card-content>
+                                </mat-card>
+                            </div>
+                        </div>
+
+                        <div fxLayout="column" fxLayoutAlign="center center">
+                            <br>
+                            <p *ngIf="errorMessage!=''" class="error-message">{{errorMessage}}</p>
+                            <mat-card-actions>
+                                <button mat-raised-button [disabled]="!controlsGroup.valid" (keyup.enter)="calculate()"
+                                    (click)="calculate()" matTooltip="Calculate coordinates">Calcular</button>
+                            </mat-card-actions>
+                        </div>
+
+                        <!--Results-->
+                        <br>
+                        <div *ngIf="xResult.value!=''" class="flex-container" fxLayout="row"
+                            fxLayoutAlign="space-around">
+                            <mat-card class="full-width">
+                                <div fxLayout="row" fxLayoutAlign="space-around">
+                                    <mat-card-title>
+                                        Coordenadas del punto Radiado
+                                    </mat-card-title>
+                                </div>
+                                <mat-card-content>
+                                    <p class="parameter">Azimut calculado: <span
+                                            class="parameter-value">{{azimutResult.value}}<sup>g</sup></span></p>
+                                    <p class="parameter">Coordenada X: <span
+                                            class="parameter-value">{{xResult.value}}</span></p>
+                                    <p class="parameter">Coordenada Y: <span
+                                            class="parameter-value">{{yResult.value}}</span></p>
+                                </mat-card-content>
+                            </mat-card>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </form>
+        </div>
+    </div>
+    <main-module-footer></main-module-footer>
+</div>

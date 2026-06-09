@@ -7,8 +7,6 @@ p, li{
 
 .fondo{
     background-color: rgb(203, 207, 207);
-    //background-color:#add8e6
-
 }
 
 .logo{
@@ -23,15 +21,6 @@ h1 {
 .error-message{color: red;}
 .parameter{color: blue;}
 .parameter-value{color: rgb(179, 5, 112); font-weight: bold;}
-
-
-.rotate_image {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
 
 .input-label {
     display: block;

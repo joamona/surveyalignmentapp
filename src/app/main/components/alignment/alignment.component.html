@@ -16,12 +16,14 @@
                                 <mat-card>
                                     <div fxLayout="row" fxLayoutAlign="space-around"><mat-card-title>Pt1. Reference line.</mat-card-title> </div>
                                         <mat-card-content>
+                                            <label class="input-label">X pt1</label>
                                             <mat-form-field class="full-width">
                                                 <input onClick="this.select();" type="number" #idxpt1 matInput placeholder="X pt1" [formControl]="xpt1" matTooltip="X pt1" (change)="clearResults()">
                                                 <mat-error *ngIf="xpt1.hasError('required')">
                                                     The X is mandatory.
                                                 </mat-error>
                                             </mat-form-field>
+                                            <label class="input-label">Y pt1</label>
                                             <mat-form-field class="full-width">
                                                 <input onClick="this.select();" type="number" matInput placeholder="Y pt1" [formControl]="ypt1" matTooltip="Y pt1" (change)="clearResults()">
                                                 <mat-error *ngIf="ypt1.hasError('required')">
@@ -36,13 +38,14 @@
                                 <mat-card>
                                     <div fxLayout="row" fxLayoutAlign="space-around"><mat-card-title>Pt2. Reference line.</mat-card-title></div>
                                     <mat-card-content>
-                                    
+                                        <label class="input-label">X pt2</label>
                                         <mat-form-field class="full-width">
                                             <input onClick="this.select();" type="number" matInput placeholder="X pt2" [formControl]="xpt2" matTooltip="X pt2" (change)="clearResults()">
                                             <mat-error *ngIf="xpt2.hasError('required')">
                                                 The X is mandatory.
                                             </mat-error>
                                         </mat-form-field>
+                                        <label class="input-label">Y pt2</label>
                                         <mat-form-field class="full-width">
                                             <input onClick="this.select();" type="number" matInput placeholder="Y pt2" [formControl]="ypt2" matTooltip="Y pt2" (change)="clearResults()">
                                             <mat-error *ngIf="ypt2.hasError('required')">
@@ -60,12 +63,14 @@
                                     <mat-card>
                                         <div fxLayout="row" fxLayoutAlign="space-around"><mat-card-title>Pt3</mat-card-title> </div>
                                             <mat-card-content>
+                                                <label class="input-label">X pt3</label>
                                                 <mat-form-field class="full-width">
                                                     <input onClick="this.select();" type="number" matInput placeholder="X pt3" [formControl]="xpt3" matTooltip="X pt3" (change)="clearResults()">
                                                     <mat-error *ngIf="xpt3.hasError('required')">
                                                         The X is mandatory.
                                                     </mat-error>
                                                 </mat-form-field>
+                                                <label class="input-label">Y pt1</label>
                                                 <mat-form-field class="full-width">
                                                     <input onClick="this.select();" type="number" matInput placeholder="Y pt1" [formControl]="ypt3" matTooltip="Y pt3" (change)="clearResults()">
                                                     <mat-error *ngIf="ypt1.hasError('required')">
@@ -80,12 +85,14 @@
                                     <mat-card>
                                         <div fxLayout="row" fxLayoutAlign="space-around"><mat-card-title>Offsets</mat-card-title> </div>
                                             <mat-card-content>
+                                                <label class="input-label">Distance offset</label>
                                                 <mat-form-field class="full-width">
                                                     <input onClick="this.select();" type="number" matInput placeholder="Distance offset" [formControl]="xOffset" matTooltip="X offset" (change)="clearResults()">
                                                     <mat-error *ngIf="xpt1.hasError('required')">
                                                         Mandatory. Set to 0 or any other value.
                                                     </mat-error>
                                                 </mat-form-field>
+                                                <label class="input-label">Distance to the origin offset</label>
                                                 <mat-form-field class="full-width">
                                                     <input onClick="this.select();" type="number" matInput placeholder="Distance to the origin offset" [formControl]="yOffset" matTooltip="Y offset" (change)="clearResults()">
                                                     <mat-error *ngIf="ypt1.hasError('required')">
@@ -127,7 +134,7 @@
                                         <p class="parameter">Reference line lenght (pt1-pt2): <span class="parameter-value">{{referenceLineLength.value}}</span></p>
                                         <p class="parameter">Projected coordinates (pt4): <span class="parameter-value">{{projectedPtX.value}}, {{projectedPtY.value}}</span></p>
                                     </mat-card-content>
-                            </mat-card>
+                                </mat-card>
                         </div>
                     </mat-card-content>
                 </mat-card>
@@ -136,4 +143,3 @@
     </div>
     <main-module-footer></main-module-footer>
 </div>
-

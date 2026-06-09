@@ -25,6 +25,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidenavLeftComponent } from './components/sidenav-left/sidenav-left.component';
 import { AppComponent } from './components/app/app.component';
 import { MapComponent } from './map/map.component';
+import { AzimuthDistanceComponent } from './components/azimuth-distance/azimuth-distance.component';
+import { Radiate2dComponent } from './components/radiate2d/radiate2d.component';
+import { Radiate3dComponent } from './components/radiate3d/radiate3d.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { MapComponent } from './map/map.component';
     HeaderComponent,
     SidenavLeftComponent,
     AppComponent,
-    MapComponent
+    MapComponent,
+    AzimuthDistanceComponent,
+    Radiate2dComponent,
+    Radiate3dComponent
   ],
   imports: [
     CommonModule,

@@ -8,6 +8,18 @@
     <mat-icon>keyboard_tab</mat-icon>
     <span>Alignment</span>
 </button>
+<button mat-button class="menu-button" (click)="closeNavLeft()" [routerLink]="'/azimuth-distance'"  matTooltip="Azimuth & Distance">
+    <mat-icon>explore</mat-icon>
+    <span>Azimuth & Distance</span>
+</button>
+<button mat-button class="menu-button" (click)="closeNavLeft()" [routerLink]="'/radiate2d'"  matTooltip="Radiate 2D">
+    <mat-icon>gps_fixed</mat-icon>
+    <span>Radiate 2D</span>
+</button>
+<button mat-button class="menu-button" (click)="closeNavLeft()" [routerLink]="'/radiate3d'"  matTooltip="Radiate 3D">
+    <mat-icon>3d_rotation</mat-icon>
+    <span>Radiate 3D</span>
+</button>
 <button mat-button class="menu-button" (click)="closeNavLeft()" [routerLink]="'/map'"  matTooltip="Map">
     <mat-icon>map</mat-icon>
     <span>Map</span>
