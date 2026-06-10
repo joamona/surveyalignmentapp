@@ -12,6 +12,16 @@ Help and live demo in https://gisserver.car.upv.es/alignment/
 - npm install
 - ng serve
 
+## Compile as APK
+
+- Select in Android studio the java 11 version
+
+
+    /usr/lib/jvm/java-11-openjdk-amd64
+
+- Select a folder, where Android Studio have write permission to download and install gradle 7.4.2. In my case is /home/joamona/gradle7/
+
+
 
 
 
